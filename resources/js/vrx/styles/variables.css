@@ -1,0 +1,17 @@
+:root {
+    --bg: #08091f;
+    --bg-primary: #0d0e2a;
+    --navy: #10103a;
+    --blue: #182f96;
+    --electric: #00bfff;
+    --violet: #6428ff;
+    --purple: #a020f0;
+    --magenta: #b80075;
+    --hot: #e600a9;
+    --cyan: #00e5ff;
+    --text: #f4f2ff;
+    --muted: #a7a5c2;
+    --line: rgba(120, 100, 255, 0.28);
+    --font: 'Montserrat', system-ui, sans-serif;
+    --max: 1180px;
+}
