@@ -1,0 +1,68 @@
+{
+  "resources/css/app.css": {
+    "file": "assets/app-CatjB7S3.css",
+    "src": "resources/css/app.css",
+    "isEntry": true,
+    "name": "app",
+    "names": [
+      "app.css"
+    ]
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-DUr89oQr.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  },
+  "resources/js/vrx/assets/images/footer-ops-hands.png": {
+    "file": "assets/footer-ops-hands-0XICjylk.png",
+    "src": "resources/js/vrx/assets/images/footer-ops-hands.png"
+  },
+  "resources/js/vrx/assets/images/hero-ai-core.png": {
+    "file": "assets/hero-ai-core-CyLkXOKp.png",
+    "src": "resources/js/vrx/assets/images/hero-ai-core.png"
+  },
+  "resources/js/vrx/assets/images/hero-luxury-core.png": {
+    "file": "assets/hero-luxury-core-DBj5adT5.png",
+    "src": "resources/js/vrx/assets/images/hero-luxury-core.png"
+  },
+  "resources/js/vrx/assets/images/ops-woman.png": {
+    "file": "assets/ops-woman-BLuipK6G.png",
+    "src": "resources/js/vrx/assets/images/ops-woman.png"
+  },
+  "resources/js/vrx/assets/images/product-pos.png": {
+    "file": "assets/product-pos-BkK2kI4e.png",
+    "src": "resources/js/vrx/assets/images/product-pos.png"
+  },
+  "resources/js/vrx/assets/images/restora-face.png": {
+    "file": "assets/restora-face-CUPxblTg.png",
+    "src": "resources/js/vrx/assets/images/restora-face.png"
+  },
+  "resources/js/vrx/assets/images/tech-code-ghost.png": {
+    "file": "assets/tech-code-ghost-Dd-V1556.png",
+    "src": "resources/js/vrx/assets/images/tech-code-ghost.png"
+  },
+  "resources/js/vrx/assets/images/webpos-face.png": {
+    "file": "assets/webpos-face-B3E0UMpN.png",
+    "src": "resources/js/vrx/assets/images/webpos-face.png"
+  },
+  "resources/js/vrx/main.jsx": {
+    "file": "assets/main-CDXAlGer.js",
+    "name": "main",
+    "src": "resources/js/vrx/main.jsx",
+    "isEntry": true,
+    "css": [
+      "assets/main-DDQQqg6K.css"
+    ],
+    "assets": [
+      "assets/hero-ai-core-CyLkXOKp.png",
+      "assets/product-pos-BkK2kI4e.png",
+      "assets/tech-code-ghost-Dd-V1556.png",
+      "assets/hero-luxury-core-DBj5adT5.png",
+      "assets/webpos-face-B3E0UMpN.png",
+      "assets/restora-face-CUPxblTg.png",
+      "assets/ops-woman-BLuipK6G.png",
+      "assets/footer-ops-hands-0XICjylk.png"
+    ]
+  }
+}
