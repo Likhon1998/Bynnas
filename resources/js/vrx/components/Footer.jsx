@@ -6,8 +6,13 @@ export default function Footer() {
             <img className="footer__hands" src={hands} alt="" aria-hidden="true" />
             <div className="footer__inner">
                 <div className="footer__col">
-                    <a href="mailto:hello@bynnas.com">hello@bynnas.com</a>
-                    <a href="https://bynnas.com">BYNNAS.COM</a>
+                    <a className="footer__mail" href="mailto:bynnasit@gmail.com">
+                        bynnasit@gmail.com
+                    </a>
+                    <span className="footer__sep" aria-hidden="true" />
+                    <a className="footer__web" href="https://bynnas.com">
+                        bynnas.com
+                    </a>
                 </div>
                 <p className="footer__copy">© {new Date().getFullYear()} BYNNAS — IT SOLUTIONS</p>
                 <ul className="footer__social">

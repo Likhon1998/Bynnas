@@ -1,5 +1,5 @@
 import pos from '../assets/images/product-pos.png';
-import operator from '../assets/images/ops-woman.png';
+import codeDesk from '../assets/images/tech-code-ghost.png';
 import DataVisualization from './DataVisualization.jsx';
 
 function Frame({ tone, children }) {
@@ -25,7 +25,7 @@ export default function ExperienceSection() {
                     <p className="experience__eyebrow">commerce systems</p>
                     <h2>Built for shops that cannot stop</h2>
                     <p>
-                        BynnasWebpos runs the counter. Bynnas Restora runs the floor. Billing,
+                        Bynnas Webpos runs the counter. Bynnas Restora runs the floor. Billing,
                         kitchen, and stock stay in one quiet, reliable stack.
                     </p>
                     <a className="cta cta--cyan" href="#suite">
@@ -33,7 +33,7 @@ export default function ExperienceSection() {
                     </a>
                     <DataVisualization />
                 </div>
-                <img className="experience__ghost" src={operator} alt="" aria-hidden="true" />
+                <img className="experience__ghost" src={codeDesk} alt="" aria-hidden="true" />
             </div>
         </section>
     );

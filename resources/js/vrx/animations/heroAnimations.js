@@ -23,5 +23,10 @@ export function playHeroIntro(root) {
         .to('.hud-line', { strokeDashoffset: 0, duration: 1.2, stagger: 0.12 }, '-=0.8')
         .from('[data-feature]', { y: 18, opacity: 0, duration: 0.7, stagger: 0.12 }, '-=0.7');
 
-    return () => tl.kill();
+    return () => {
+        tl.kill();
+        gsap.set('.hero-title, .hero-sub, .hero-desc, .services-kicker, .hero-figure-wrap, [data-feature]', {
+            clearProps: 'opacity,transform',
+        });
+    };
 }

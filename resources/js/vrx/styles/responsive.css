@@ -1,19 +1,36 @@
+@media (min-width: 768px) {
+    .hero,
+    .process,
+    .experience,
+    .products,
+    .detail-page,
+    .footer__inner {
+        padding-left: 188px;
+    }
+}
+
 @media (max-width: 1199px) {
     .hero,
     .process,
     .experience,
     .products,
-    .footer__inner {
-        padding-left: 56px;
+    .footer__inner,
+    .detail-page {
         padding-right: 28px;
     }
 
     .process-labels {
         grid-template-columns: repeat(3, 1fr);
+        gap: 22px 16px;
+        margin-top: 8px;
     }
 
     .products-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .achieve-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .hero-stage {
@@ -21,44 +38,121 @@
     }
 
     .feature {
-        width: 190px;
+        width: min(200px, 28%);
+    }
+
+    .experience__layout {
+        grid-template-columns: 1fr;
+        gap: 28px;
     }
 
     .experience__ghost,
     .experience__ship {
-        opacity: 0.18;
+        opacity: 0.14;
+    }
+
+    .hud-data {
+        grid-template-columns: 1fr;
+    }
+
+    .detail-layout {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+}
+
+@media (max-width: 900px) {
+    .mission-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .experience__crystal-grid {
+        grid-template-columns: 1fr;
+        min-height: 0;
+    }
+
+    .detail-points {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-title {
+        letter-spacing: 0.12em;
     }
 }
 
 @media (max-width: 767px) {
     .vrx-nav {
-        position: sticky;
+        position: fixed;
         top: 0;
         left: 0;
+        right: 0;
         width: 100%;
-        background: rgba(8, 9, 31, 0.9);
-        backdrop-filter: blur(10px);
-        padding: 10px 16px;
-        gap: 10px;
+        background: rgba(8, 9, 31, 0.94);
+        backdrop-filter: blur(12px);
+        padding: calc(8px + env(safe-area-inset-top, 0px)) 12px 8px;
+        gap: 8px;
+        z-index: 80;
+    }
+
+    .vrx-page {
+        padding-top: 84px;
     }
 
     .vrx-nav__bar {
-        height: 34px;
+        height: 28px;
+        align-self: center;
     }
 
     .vrx-nav__list {
         display: flex;
+        flex-direction: row;
         flex-wrap: wrap;
-        gap: 2px 12px;
-        padding: 4px 0;
+        gap: 2px 6px;
+        padding: 0;
+    }
+
+    .vrx-nav__list a::before {
+        display: none;
+    }
+
+    .vrx-nav__list a {
+        letter-spacing: 0.14em;
+        text-shadow: none;
+    }
+
+    .vrx-nav__list a.is-active {
+        color: #fff;
+        letter-spacing: 0.14em;
+    }
+
+    #home,
+    #what-we-do,
+    #process,
+    #mission,
+    #why,
+    #suite,
+    #achievements,
+    #contact {
+        scroll-margin-top: 92px;
     }
 
     .hero,
     .process,
     .experience,
     .products,
-    .footer__inner {
+    .footer__inner,
+    .detail-page {
         padding: 22px 16px;
+        padding-left: max(16px, env(safe-area-inset-left));
+        padding-right: max(16px, env(safe-area-inset-right));
+    }
+
+    .hero {
+        min-height: auto;
     }
 
     .hero-stage {
@@ -66,12 +160,12 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 20px;
-        padding-bottom: 16px;
+        gap: 18px;
+        padding-bottom: 12px;
     }
 
     .hero-figure-wrap {
-        width: min(320px, 88vw);
+        width: min(280px, 82vw);
         order: -1;
     }
 
@@ -79,41 +173,104 @@
     .hero-grid-glow,
     .experience__ghost,
     .experience__ship,
-    .footer__hands {
+    .footer__hands,
+    .hero-aura {
         display: none;
     }
 
     .feature {
         position: static;
         width: 100%;
-        max-width: 360px;
+        max-width: 100%;
         flex-direction: row !important;
         text-align: left !important;
         transform: none;
     }
 
+    .process-svg {
+        min-height: 140px;
+    }
+
     .process-labels,
     .experience__layout,
     .detail-layout,
-    .products-grid,
     .mission-grid,
-    .achieve-grid,
     .hud-data,
-    .footer__inner {
+    .footer__inner,
+    .experience__split {
         grid-template-columns: 1fr;
     }
 
-    .tech-frame {
-        min-height: 280px;
+    .products-grid,
+    .achieve-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .process-labels {
+        grid-template-columns: 1fr 1fr;
+        gap: 16px 12px;
+    }
+
+    .hex-num {
+        font-size: 11px;
+    }
+
+    .tech-frame,
+    .detail-face,
+    .experience__portrait-wrap {
+        min-height: 240px;
+    }
+
+    .detail-face__img {
+        min-height: 220px;
+    }
+
+    .cta {
+        padding: 10px 22px;
+        letter-spacing: 0.28em;
     }
 
     .footer__inner {
         text-align: center;
+        gap: 16px;
+        padding-bottom: calc(28px + env(safe-area-inset-bottom, 0px));
     }
 
     .footer__col,
     .footer__social {
         align-items: center;
         justify-content: center;
+    }
+
+    .footer__sep {
+        background: linear-gradient(90deg, transparent, rgba(122, 240, 255, 0.7), transparent);
+        width: 40px;
+    }
+
+    .footer__copy {
+        order: 3;
+    }
+}
+
+@media (max-width: 479px) {
+    .products-grid,
+    .achieve-grid,
+    .process-labels {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-title {
+        font-size: 22px;
+        letter-spacing: 0.1em;
+    }
+
+    .hero-sub {
+        letter-spacing: 0.22em;
+        font-size: 11px;
+    }
+
+    .vrx-nav__list a {
+        letter-spacing: 0.08em;
     }
 }

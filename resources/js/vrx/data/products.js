@@ -80,14 +80,14 @@ export const products = [
     },
     {
         id: 'webpos',
-        title: 'BynnasWebpos',
+        title: 'Bynnas Webpos',
         face: 'webpos',
         icon: 'cube',
         kicker: '02 — commerce',
         text: 'Cloud POS for retail and counters — billing, stock, and daily sales in one system.',
         lead: 'The counter system for shops that cannot pause: bills, stock, and reports in one quiet stack.',
         sections: [
-            { title: 'The counter', text: 'BynnasWebpos runs billing and receipts from a cloud POS your cashiers can trust at peak hour.' },
+            { title: 'The counter', text: 'Bynnas Webpos runs billing and receipts from a cloud POS your cashiers can trust at peak hour.' },
             { title: 'The stockroom', text: 'Live inventory and end-of-day reports sit on the same data layer as Restora.' },
         ],
         points: ['Fast billing', 'Live stock', 'Daily sales reports'],
@@ -140,5 +140,5 @@ export const achievements = [
     { value: '05', label: 'products', mark: 'ai' },
     { value: '120', label: 'deployments', mark: 'pos' },
     { value: '98', label: 'uptime', mark: 'core' },
-    { value: '24', label: 'support', mark: 'hands' },
+    { value: '24', label: 'support', mark: 'webpos' },
 ];

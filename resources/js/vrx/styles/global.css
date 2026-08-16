@@ -24,6 +24,7 @@ body {
 
 img {
     max-width: 100%;
+    height: auto;
     display: block;
 }
 
@@ -41,6 +42,7 @@ button:focus-visible {
 .vrx-page {
     position: relative;
     isolation: isolate;
+    max-width: 100%;
 }
 
 .atmosphere {

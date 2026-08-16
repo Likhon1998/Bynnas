@@ -64,6 +64,7 @@ function Glyph({ id }) {
 export default function ProductShowcase() {
     return (
         <section id="suite" className="products">
+            <span className="section-divider__mark" aria-hidden="true" />
             <p className="process-kicker">products</p>
             <div className="products-grid">
                 {products.map((item) => (

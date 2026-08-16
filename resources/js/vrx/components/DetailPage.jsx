@@ -75,7 +75,7 @@ export default function DetailPage({ kind, item, siblings }) {
                             </li>
                         ))}
                     </ul>
-                    <a className={`cta ${featured ? 'cta--gold' : 'cta--cyan'}`} href="#/">
+                    <a className={`cta ${featured ? 'cta--gold' : 'cta--cyan'}`} href="#suite">
                         back to suite
                     </a>
                 </div>

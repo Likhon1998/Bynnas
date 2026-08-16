@@ -7,7 +7,7 @@ function hexPoints(cx, cy, r) {
 
 const nodes = [
     { n: '01', x: 80, y: 78, glow: true },
-    { n: '02', x: 280, y: 188, glow: false },
+    { n: '02', x: 280, y: 188, glow: true },
     { n: '03', x: 480, y: 78, glow: true },
     { n: '04', x: 680, y: 188, glow: true },
     { n: '05', x: 880, y: 78, glow: true },
@@ -26,6 +26,7 @@ const copy = [
 export default function Process() {
     return (
         <section id="process" className="process">
+            <span className="section-divider__mark" aria-hidden="true" />
             <p className="process-kicker">process</p>
             <div className="process-diagram">
                 <svg className="process-svg" viewBox="0 0 1180 270" fill="none" aria-hidden="true">
@@ -66,9 +67,8 @@ export default function Process() {
                 <div className="process-labels">
                     {copy.map((step) => (
                         <article key={step.n} className="process-card">
-                            <h3>
-                                {step.n} {step.title}
-                            </h3>
+                            <p className="process-card__index">{step.n}</p>
+                            <h3>{step.title}</h3>
                             <p>{step.text}</p>
                         </article>
                     ))}

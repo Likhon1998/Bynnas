@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
         <title>Bynnas — IT Solutions</title>
         <style>
             html, body, #root { margin: 0; min-height: 100%; background: #08091f; color: #f4f2ff; font-family: Montserrat, sans-serif; }

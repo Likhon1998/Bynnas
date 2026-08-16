@@ -2,9 +2,9 @@ import { achievements } from '../data/products.js';
 import ai from '../assets/images/hero-ai-core.png';
 import pos from '../assets/images/product-pos.png';
 import core from '../assets/images/hero-luxury-core.png';
-import hands from '../assets/images/footer-ops-hands.png';
+import webpos from '../assets/images/webpos-face.png';
 
-const marks = { ai, pos, core, hands };
+const marks = { ai, pos, core, webpos };
 
 export default function Achievements() {
     return (

@@ -25,12 +25,28 @@ export default function App() {
 
     useEffect(() => {
         const onHash = () => {
-            setRoute(parseHash());
-            window.scrollTo(0, 0);
+            const next = parseHash();
+            const hash = window.location.hash || '';
+            setRoute(next);
+            const isAppPath = next.type !== 'home' || hash === '#/' || hash === '#' || hash === '';
+            if (isAppPath) {
+                window.scrollTo(0, 0);
+            }
         };
         window.addEventListener('hashchange', onHash);
         return () => window.removeEventListener('hashchange', onHash);
     }, []);
+
+    useEffect(() => {
+        if (route.type !== 'home') return undefined;
+        const hash = window.location.hash || '';
+        if (!hash || hash.startsWith('#/')) return undefined;
+        const id = hash.slice(1);
+        const frame = window.requestAnimationFrame(() => {
+            document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+        return () => window.cancelAnimationFrame(frame);
+    }, [route]);
 
     useEffect(() => {
         const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -59,7 +75,6 @@ export default function App() {
                         <MissionVision />
                         <SectionDivider title="we build reliable" subtitle="systems" />
                         <ExperienceSection />
-                        <SectionDivider title="one company" subtitle="five products" />
                         <ProductShowcase />
                         <Achievements />
                     </>

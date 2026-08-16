@@ -65,11 +65,11 @@ export function initScrollAnimations() {
         });
     });
 
-    gsap.from('[data-ring]', {
+    gsap.from('[data-bar]', {
         scrollTrigger: { trigger: '.hud-data', start: 'top 85%' },
-        strokeDashoffset: (i, el) => el.getAttribute('stroke-dasharray'),
-        duration: 1.4,
-        stagger: 0.15,
+        height: 0,
+        duration: 1.2,
+        stagger: 0.12,
         ease: 'power2.out',
     });
 
