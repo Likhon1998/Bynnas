@@ -60,9 +60,9 @@
         grid-template-columns: 1fr;
     }
 
-    .detail-layout {
+    .detail-board,
+    .detail-showcase {
         grid-template-columns: 1fr;
-        gap: 28px;
     }
 }
 
@@ -437,7 +437,6 @@
     }
 
     .experience__layout,
-    .detail-layout,
     .hud-data,
     .experience__split,
     .footer__inner {
@@ -445,26 +444,79 @@
     }
 
     .experience__copy h2,
-    .detail-page h1 {
-        font-size: clamp(18px, 5.5vw, 24px);
+    .detail-intro h1 {
+        font-size: clamp(22px, 5.5vw, 28px);
         max-width: none;
+    }
+
+    .detail-page {
+        padding: 20px 16px 36px;
+    }
+
+    .detail-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 14px;
+        padding-bottom: 14px;
+    }
+
+    .detail-back {
+        align-self: center;
+        width: 100%;
+        max-width: 280px;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .detail-tabs {
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 4px;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .detail-hero__screen {
+        aspect-ratio: 16 / 9;
+    }
+
+    .detail-hero--wide .detail-hero__screen {
+        aspect-ratio: 1024 / 448;
+    }
+
+    .detail-hero--portrait .detail-hero__screen {
+        max-height: 360px;
+    }
+
+    .detail-highlights {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .detail-highlight {
+        min-height: 0;
+        padding: 14px;
+    }
+
+    .detail-tags {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .detail-tags li {
+        font-size: 11px;
+    }
+
+    .tech-frame,
+    .experience__portrait-wrap {
+        min-height: 0;
+        padding: 14px 12px;
+        height: auto;
     }
 
     .experience__copy p,
     .detail-lead {
         font-size: 14px;
         max-width: none;
-    }
-
-    .tech-frame,
-    .detail-face,
-    .experience__portrait-wrap {
-        min-height: 220px;
-        padding: 24px 18px;
-    }
-
-    .detail-face__img {
-        min-height: 200px;
     }
 
     .cta {
@@ -554,22 +606,16 @@
     }
 
     .detail-page {
-        padding-top: 24px;
-        padding-bottom: 40px;
+        padding-top: 12px;
+        padding-bottom: 28px;
     }
 
-    .detail-head {
-        margin-bottom: 20px;
+    .detail-tagline {
+        font-size: 14px;
     }
 
-    .detail-siblings {
-        flex-wrap: wrap;
-        gap: 8px;
-    }
-
-    .detail-siblings a {
-        min-height: 40px;
-        padding: 10px 12px;
+    .detail-tabs a {
+        flex-shrink: 0;
     }
 }
 
