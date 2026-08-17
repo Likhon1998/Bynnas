@@ -36,6 +36,7 @@ export default function Navigation({ home }) {
           ];
 
     const [active, setActive] = useState(links[0].href);
+    const [open, setOpen] = useState(false);
 
     useEffect(() => {
         if (!home) return undefined;
@@ -58,10 +59,50 @@ export default function Navigation({ home }) {
         return () => observer.disconnect();
     }, [home]);
 
+    useEffect(() => {
+        document.body.classList.toggle('nav-lock', open);
+        return () => document.body.classList.remove('nav-lock');
+    }, [open]);
+
+    useEffect(() => {
+        const onResize = () => {
+            if (window.innerWidth > 767) setOpen(false);
+        };
+        window.addEventListener('resize', onResize);
+        return () => window.removeEventListener('resize', onResize);
+    }, []);
+
     return (
-        <nav className="vrx-nav" aria-label="Primary">
+        <nav className={`vrx-nav${open ? ' is-open' : ''}`} aria-label="Primary">
+            <div className="vrx-nav__mobile-top">
+                <a
+                    className="vrx-nav__brand"
+                    href="#home"
+                    onClick={(event) => {
+                        event.preventDefault();
+                        setOpen(false);
+                        if (home) goTo('#home');
+                        else goTo('#/');
+                    }}
+                >
+                    BYNNAS
+                </a>
+                <button
+                    type="button"
+                    className="vrx-nav__toggle"
+                    aria-expanded={open}
+                    aria-controls="vrx-nav-panel"
+                    aria-label={open ? 'Close menu' : 'Open menu'}
+                    onClick={() => setOpen((v) => !v)}
+                >
+                    <span />
+                    <span />
+                    <span />
+                </button>
+            </div>
+
             <span className="vrx-nav__bar" aria-hidden="true" />
-            <ul className="vrx-nav__list">
+            <ul id="vrx-nav-panel" className="vrx-nav__list">
                 {links.map((item) => (
                     <li key={item.label}>
                         <a
@@ -70,6 +111,7 @@ export default function Navigation({ home }) {
                             onClick={(event) => {
                                 event.preventDefault();
                                 setActive(item.href);
+                                setOpen(false);
                                 goTo(item.href);
                             }}
                         >
@@ -78,6 +120,13 @@ export default function Navigation({ home }) {
                     </li>
                 ))}
             </ul>
+            <button
+                type="button"
+                className="vrx-nav__backdrop"
+                aria-label="Close menu"
+                tabIndex={open ? 0 : -1}
+                onClick={() => setOpen(false)}
+            />
         </nav>
     );
 }

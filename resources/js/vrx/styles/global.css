@@ -22,6 +22,10 @@ body {
     overflow-x: hidden;
 }
 
+body.nav-lock {
+    touch-action: none;
+}
+
 img {
     max-width: 100%;
     height: auto;
