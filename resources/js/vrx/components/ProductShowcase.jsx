@@ -1,87 +1,111 @@
+import { useState } from 'react';
 import { products } from '../data/products.js';
 
-const codes = {
-    restors: '01',
-    webpos: '02',
-    port: '03',
-    pharma: '04',
-    bus: '05',
+import restora from '../assets/images/restora-face.png';
+import webpos from '../assets/images/webpos-face.png';
+import pos from '../assets/images/product-pos.png';
+import core from '../assets/images/hero-luxury-core.png';
+import ops from '../assets/images/ops-woman.png';
+
+const meta = {
+    restors: { industry: 'Hospitality',  accent: '#f59e0b', img: restora },
+    webpos:  { industry: 'Retail & POS', accent: '#8b5cf6', img: webpos },
+    port:    { industry: 'Operations',   accent: '#06b6d4', img: core },
+    pharma:  { industry: 'Pharmacy',     accent: '#10b981', img: pos },
+    bus:     { industry: 'Transport',    accent: '#6366f1', img: ops },
 };
 
-const marks = {
-    restors: 'HOSP',
-    webpos: 'POS',
-    port: 'PORT',
-    pharma: 'RX',
-    bus: 'FLEET',
+const icons = {
+    restors: <svg viewBox="0 0 24 24"><path d="M4 11h16v8H4zM7 11V8a5 5 0 0 1 10 0v3" fill="none" stroke="currentColor" strokeWidth="1.5" /></svg>,
+    webpos:  <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="12" rx="2" fill="none" stroke="currentColor" strokeWidth="1.5" /><path d="M8 21h8" fill="none" stroke="currentColor" strokeWidth="1.5" /></svg>,
+    port:    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" strokeWidth="1.5" /><path d="M12 4v16M4 12h16" fill="none" stroke="currentColor" strokeWidth="1.5" /></svg>,
+    pharma:  <svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="18" rx="3" fill="none" stroke="currentColor" strokeWidth="1.5" /><path d="M12 8v8M8 12h8" fill="none" stroke="currentColor" strokeWidth="1.5" /></svg>,
+    bus:     <svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="10" rx="2" fill="none" stroke="currentColor" strokeWidth="1.5" /><circle cx="7" cy="18" r="1.5" /><circle cx="17" cy="18" r="1.5" /></svg>,
 };
-
-function Glyph({ id }) {
-    if (id === 'webpos') {
-        return (
-            <svg viewBox="0 0 48 48" className="product-glyph">
-                <rect x="8" y="10" width="32" height="22" fill="none" stroke="currentColor" strokeWidth="1.1" />
-                <path d="M14 36 H34 M24 32 V36" fill="none" stroke="currentColor" strokeWidth="1.1" />
-                <path d="M14 18 H34 M14 24 H26" fill="none" stroke="currentColor" strokeWidth="1" />
-            </svg>
-        );
-    }
-    if (id === 'restors') {
-        return (
-            <svg viewBox="0 0 48 48" className="product-glyph">
-                <circle cx="16" cy="18" r="5" fill="none" stroke="currentColor" strokeWidth="1.1" />
-                <circle cx="32" cy="18" r="5" fill="none" stroke="currentColor" strokeWidth="1.1" />
-                <path d="M8 34 H40 M12 26 H36" fill="none" stroke="currentColor" strokeWidth="1.1" />
-            </svg>
-        );
-    }
-    if (id === 'port') {
-        return (
-            <svg viewBox="0 0 48 48" className="product-glyph">
-                <circle cx="24" cy="24" r="10" fill="none" stroke="currentColor" strokeWidth="1.1" />
-                <circle cx="24" cy="24" r="3" fill="currentColor" />
-                <path d="M24 8 V14 M24 34 V40 M8 24 H14 M34 24 H40" fill="none" stroke="currentColor" strokeWidth="1.1" />
-            </svg>
-        );
-    }
-    if (id === 'pharma') {
-        return (
-            <svg viewBox="0 0 48 48" className="product-glyph">
-                <rect x="18" y="8" width="12" height="32" rx="6" fill="none" stroke="currentColor" strokeWidth="1.1" />
-                <path d="M24 16 V28 M18 22 H30" fill="none" stroke="currentColor" strokeWidth="1.1" />
-            </svg>
-        );
-    }
-    return (
-        <svg viewBox="0 0 48 48" className="product-glyph">
-            <rect x="8" y="14" width="32" height="14" rx="2" fill="none" stroke="currentColor" strokeWidth="1.1" />
-            <circle cx="16" cy="32" r="3" fill="none" stroke="currentColor" strokeWidth="1.1" />
-            <circle cx="32" cy="32" r="3" fill="none" stroke="currentColor" strokeWidth="1.1" />
-        </svg>
-    );
-}
 
 export default function ProductShowcase() {
+    const [active, setActive] = useState(0);
+    const item  = products[active];
+    const { industry, accent, img } = meta[item.id];
+
     return (
-        <section id="suite" className="products">
-            <span className="section-divider__mark" aria-hidden="true" />
-            <p className="process-kicker">products</p>
-            <div className="products-grid">
-                {products.map((item) => (
-                    <a key={item.id} href={`#/products/${item.id}`} className={`product-panel${item.featured ? ' product-panel--featured' : ''}`} data-product>
-                        <span className="product-panel__c product-panel__c--tl" />
-                        <span className="product-panel__c product-panel__c--tr" />
-                        <span className="product-panel__c product-panel__c--bl" />
-                        <span className="product-panel__c product-panel__c--br" />
-                        <header className="product-panel__head">
-                            <span>{codes[item.id]}</span>
-                            <span>{marks[item.id]}</span>
-                        </header>
-                        <Glyph id={item.id} />
-                        <h3>{item.title}</h3>
-                        <p>{item.text}</p>
-                    </a>
-                ))}
+        <section id="suite" className="suite">
+            <header className="suite__header">
+                <h2>Our products</h2>
+                <p>Five systems. One connected platform. Pick what you need.</p>
+            </header>
+
+            <div className="pcard" style={{ '--pa': accent }}>
+
+                {/* ── Left sidebar ── */}
+                <div className="pcard__sidebar">
+                    <p className="pcard__sidebar-label">Products</p>
+                    {products.map((p, i) => (
+                        <button
+                            key={p.id}
+                            type="button"
+                            className={`pcard__tab${active === i ? ' active' : ''}`}
+                            onClick={() => setActive(i)}
+                        >
+                            <span
+                                className="pcard__tab-icon"
+                                style={active === i ? { color: meta[p.id].accent, background: `${meta[p.id].accent}18` } : undefined}
+                            >
+                                {icons[p.id]}
+                            </span>
+                            <div>
+                                <span className="pcard__tab-name">{p.title.replace('Bynnas ', '')}</span>
+                                <span className="pcard__tab-cat">{meta[p.id].industry}</span>
+                            </div>
+                            <span className="pcard__tab-pip" style={active === i ? { background: meta[p.id].accent } : undefined} />
+                        </button>
+                    ))}
+                </div>
+
+                {/* ── Main panel ── */}
+                <div className="pcard__main">
+
+                    {/* Image — full bleed, right half */}
+                    <div className="pcard__photo">
+                        <img src={img} alt={item.title} className="pcard__photo-img" />
+                        {/* Left-to-right fade so text is readable */}
+                        <div className="pcard__photo-mask" style={{ '--pa': accent }} />
+                        {/* Floating accent badge */}
+                        <span className="pcard__photo-badge" style={{ background: accent }}>
+                            {industry}
+                        </span>
+                    </div>
+
+                    {/* Content — left half, floats over image fade */}
+                    <div className="pcard__copy">
+                        <h3 className="pcard__name">{item.title}</h3>
+                        <p className="pcard__desc">{item.text}</p>
+
+                        <ul className="pcard__features">
+                            {item.points.slice(0, 6).map((pt) => (
+                                <li key={pt}>
+                                    <svg viewBox="0 0 12 12" width="12" height="12" style={{ color: accent }}>
+                                        <path d="M2 6l3 3 5-5" stroke="currentColor" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                                    </svg>
+                                    {pt}
+                                </li>
+                            ))}
+                        </ul>
+
+                        <div className="pcard__actions">
+                            <a
+                                className="pcard__btn"
+                                href={`#/products/${item.id}`}
+                                style={{ background: accent }}
+                            >
+                                Explore {item.title.replace('Bynnas ', '')}
+                                <svg viewBox="0 0 16 16" width="14" height="14"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" /></svg>
+                            </a>
+                            <a className="pcard__link" href={`#/products/${item.id}`}>View all features</a>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </section>
     );

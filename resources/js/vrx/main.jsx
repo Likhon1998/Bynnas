@@ -4,6 +4,7 @@ import App from './App.jsx';
 import './styles/variables.css';
 import './styles/global.css';
 import './styles/sections.css';
+import './styles/products-scroll.css';
 import './styles/responsive.css';
 
 const rootEl = document.getElementById('root');

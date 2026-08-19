@@ -4,11 +4,11 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Navigation from './components/Navigation.jsx';
 import Hero from './components/Hero.jsx';
 import Process from './components/Process.jsx';
-import SectionDivider from './components/SectionDivider.jsx';
 import ExperienceSection from './components/ExperienceSection.jsx';
 import ProductShowcase from './components/ProductShowcase.jsx';
 import MissionVision from './components/MissionVision.jsx';
 import Achievements from './components/Achievements.jsx';
+import Clients from './components/Clients.jsx';
 import DetailPage from './components/DetailPage.jsx';
 import Footer from './components/Footer.jsx';
 import Atmosphere from './components/Atmosphere.jsx';
@@ -71,21 +71,22 @@ export default function App() {
                 {route.type === 'home' && (
                     <>
                         <Hero />
+                        <ProductShowcase />
+                        <ExperienceSection />
                         <Process />
                         <MissionVision />
-                        <SectionDivider title="we build reliable" subtitle="systems" />
-                        <ExperienceSection />
-                        <ProductShowcase />
                         <Achievements />
+                        <Clients />
                     </>
                 )}
                 {product && <DetailPage kind="product" item={product} siblings={products} />}
                 {service && <DetailPage kind="do" item={service} siblings={whatWeDo} />}
                 {route.type !== 'home' && !product && !service && (
                     <section className="experience">
-                        <p className="process-kicker">missing</p>
+                        <p className="process-kicker">Page not found</p>
+                        <h2>The requested page could not be found.</h2>
                         <a className="cta cta--cyan" href="#/">
-                            home
+                            Return to home
                         </a>
                     </section>
                 )}
