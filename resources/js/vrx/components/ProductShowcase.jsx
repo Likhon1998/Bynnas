@@ -8,11 +8,11 @@ import core from '../assets/images/hero-luxury-core.png';
 import ops from '../assets/images/ops-woman.png';
 
 const meta = {
-    restors: { industry: 'Hospitality',  accent: '#f59e0b', img: restora },
-    webpos:  { industry: 'Retail & POS', accent: '#8b5cf6', img: webpos },
-    port:    { industry: 'Operations',   accent: '#06b6d4', img: core },
-    pharma:  { industry: 'Pharmacy',     accent: '#10b981', img: pos },
-    bus:     { industry: 'Transport',    accent: '#6366f1', img: ops },
+    restors: { industry: 'Hospitality',  accent: '#f59e0b', img: restora, short: 'Restora' },
+    webpos:  { industry: 'Retail & POS', accent: '#8b5cf6', img: webpos,  short: 'Webpos' },
+    port:    { industry: 'Operations',   accent: '#06b6d4', img: core,    short: 'Port' },
+    pharma:  { industry: 'Pharmacy',     accent: '#10b981', img: pos,     short: 'Pharma' },
+    bus:     { industry: 'Transport',    accent: '#6366f1', img: ops,     short: 'Bus' },
 };
 
 const icons = {
@@ -46,18 +46,16 @@ export default function ProductShowcase() {
                             type="button"
                             className={`pcard__tab${active === i ? ' active' : ''}`}
                             onClick={() => setActive(i)}
+                            style={{ '--tab': meta[p.id].accent }}
                         >
-                            <span
-                                className="pcard__tab-icon"
-                                style={active === i ? { color: meta[p.id].accent, background: `${meta[p.id].accent}18` } : undefined}
-                            >
+                            <span className="pcard__tab-icon">
                                 {icons[p.id]}
                             </span>
                             <div>
-                                <span className="pcard__tab-name">{p.title.replace('Bynnas ', '')}</span>
+                                <span className="pcard__tab-name">{meta[p.id].short}</span>
                                 <span className="pcard__tab-cat">{meta[p.id].industry}</span>
                             </div>
-                            <span className="pcard__tab-pip" style={active === i ? { background: meta[p.id].accent } : undefined} />
+                            <span className="pcard__tab-pip" />
                         </button>
                     ))}
                 </div>

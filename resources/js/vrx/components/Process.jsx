@@ -11,19 +11,24 @@ export default function Process() {
     return (
         <section id="process" className="process">
             <div className="process-copy">
-                <h2>How we deliver</h2>
+                <span className="section-kicker">How we deliver</span>
+                <h2>Clear steps. No surprises.</h2>
                 <p>
-                    Same process every time. You know what's happening, when it's
-                    happening, and who's responsible.
+                    Same process every time. You know what is happening, when it is
+                    happening, and who is responsible.
                 </p>
             </div>
             <ol className="process-timeline">
                 {copy.map((step) => (
                     <li key={step.n} className="process-step">
-                        <span className="process-step__icon" aria-hidden="true" />
-                        <span className="process-step__n">{step.n}</span>
-                        <h3>{step.title}</h3>
-                        <p>{step.text}</p>
+                        <span className="process-step__marker" aria-hidden="true">
+                            <span className="process-step__icon" />
+                        </span>
+                        <div className="process-step__body">
+                            <span className="process-step__n">{step.n}</span>
+                            <h3>{step.title}</h3>
+                            <p>{step.text}</p>
+                        </div>
                     </li>
                 ))}
             </ol>

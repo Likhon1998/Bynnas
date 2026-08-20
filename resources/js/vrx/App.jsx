@@ -82,12 +82,15 @@ export default function App() {
                 {product && <DetailPage kind="product" item={product} siblings={products} />}
                 {service && <DetailPage kind="do" item={service} siblings={whatWeDo} />}
                 {route.type !== 'home' && !product && !service && (
-                    <section className="experience">
-                        <p className="process-kicker">Page not found</p>
-                        <h2>The requested page could not be found.</h2>
-                        <a className="cta cta--cyan" href="#/">
-                            Return to home
-                        </a>
+                    <section className="detail-page">
+                        <div className="detail-shell detail-shell--empty">
+                            <span className="section-kicker">404</span>
+                            <h1>Page not found</h1>
+                            <p className="detail-lead">That link does not match a product or service.</p>
+                            <a className="cta cta--primary" href="#/">
+                                Return to home
+                            </a>
+                        </div>
                     </section>
                 )}
             </main>

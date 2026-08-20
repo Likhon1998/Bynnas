@@ -47,12 +47,12 @@
     "src": "resources/js/vrx/assets/images/webpos-face.png"
   },
   "resources/js/vrx/main.jsx": {
-    "file": "assets/main-CwBkvHFX.js",
+    "file": "assets/main-Dsd2wUx4.js",
     "name": "main",
     "src": "resources/js/vrx/main.jsx",
     "isEntry": true,
     "css": [
-      "assets/main-DKk3OuZK.css"
+      "assets/main-AVcrxdBY.css"
     ],
     "assets": [
       "assets/restora-face-CUPxblTg.png",
