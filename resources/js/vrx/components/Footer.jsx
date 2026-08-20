@@ -36,6 +36,9 @@ export default function Footer() {
                         <a className="footer__mail" href="mailto:bynnasit@gmail.com">
                             bynnasit@gmail.com
                         </a>
+                        <a className="footer__phone" href="tel:+8801781165054">
+                            01781165054
+                        </a>
                         <a href="https://bynnas.com">bynnas.com</a>
                     </div>
                 </div>
