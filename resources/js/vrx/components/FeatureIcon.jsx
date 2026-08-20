@@ -48,5 +48,7 @@ export function parseHash() {
         return { type: 'product', slug: alias };
     }
     if (kind === 'do' && slug) return { type: 'do', slug };
+    if (kind === 'blog' && slug) return { type: 'blog', slug };
+    if (kind === 'blog') return { type: 'blog-list' };
     return { type: 'home' };
 }

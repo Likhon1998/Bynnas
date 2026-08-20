@@ -1,6 +1,6 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app-CatjB7S3.css",
+    "file": "assets/app-CViJ14-v.css",
     "src": "resources/css/app.css",
     "isEntry": true,
     "name": "app",
@@ -13,6 +13,26 @@
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true
+  },
+  "resources/js/vrx/assets/images/blog/app-security.jpg": {
+    "file": "assets/app-security-DmSUPx2q.jpg",
+    "src": "resources/js/vrx/assets/images/blog/app-security.jpg"
+  },
+  "resources/js/vrx/assets/images/blog/cloud-deployment.jpg": {
+    "file": "assets/cloud-deployment-7Lpo0ju7.jpg",
+    "src": "resources/js/vrx/assets/images/blog/cloud-deployment.jpg"
+  },
+  "resources/js/vrx/assets/images/blog/custom-software.jpg": {
+    "file": "assets/custom-software-B-EuMC3J.jpg",
+    "src": "resources/js/vrx/assets/images/blog/custom-software.jpg"
+  },
+  "resources/js/vrx/assets/images/blog/software-adoption.jpg": {
+    "file": "assets/software-adoption-Cys-OjtA.jpg",
+    "src": "resources/js/vrx/assets/images/blog/software-adoption.jpg"
+  },
+  "resources/js/vrx/assets/images/blog/system-integration.jpg": {
+    "file": "assets/system-integration-BEFSyuAx.jpg",
+    "src": "resources/js/vrx/assets/images/blog/system-integration.jpg"
   },
   "resources/js/vrx/assets/images/client-akhitelecom.png": {
     "file": "assets/client-akhitelecom-CwYaYZEw.png",
@@ -47,12 +67,12 @@
     "src": "resources/js/vrx/assets/images/webpos-face.png"
   },
   "resources/js/vrx/main.jsx": {
-    "file": "assets/main-Dsd2wUx4.js",
+    "file": "assets/main-DpmxesXU.js",
     "name": "main",
     "src": "resources/js/vrx/main.jsx",
     "isEntry": true,
     "css": [
-      "assets/main-AVcrxdBY.css"
+      "assets/main-DMtOl9vo.css"
     ],
     "assets": [
       "assets/restora-face-CUPxblTg.png",
@@ -61,6 +81,11 @@
       "assets/hero-luxury-core-DBj5adT5.png",
       "assets/ops-woman-BLuipK6G.png",
       "assets/client-akhitelecom-CwYaYZEw.png",
+      "assets/custom-software-B-EuMC3J.jpg",
+      "assets/system-integration-BEFSyuAx.jpg",
+      "assets/cloud-deployment-7Lpo0ju7.jpg",
+      "assets/software-adoption-Cys-OjtA.jpg",
+      "assets/app-security-DmSUPx2q.jpg",
       "assets/hero-ai-core-CyLkXOKp.png",
       "assets/footer-ops-hands-0XICjylk.png"
     ]

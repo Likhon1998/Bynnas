@@ -59,6 +59,15 @@ export function initScrollAnimations() {
         ease: 'power2.out',
     });
 
+    gsap.from('.bcard', {
+        scrollTrigger: { trigger: '.blog', start: 'top 85%' },
+        opacity: 0,
+        y: 18,
+        stagger: 0.08,
+        duration: 0.65,
+        ease: 'power2.out',
+    });
+
     gsap.from('.footer__inner > *', {
         scrollTrigger: { trigger: '.footer', start: 'top 90%' },
         opacity: 0,

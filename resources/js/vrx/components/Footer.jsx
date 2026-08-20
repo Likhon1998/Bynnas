@@ -29,6 +29,7 @@ export default function Footer() {
                         <a href="#process">Process</a>
                         <a href="#achievements">Achievements</a>
                         <a href="#clients">Clients</a>
+                        <a href="#/blog">Blog</a>
                     </div>
                     <div className="footer__col">
                         <h3>Contact</h3>

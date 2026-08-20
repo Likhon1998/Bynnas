@@ -9,11 +9,15 @@ import ProductShowcase from './components/ProductShowcase.jsx';
 import MissionVision from './components/MissionVision.jsx';
 import Achievements from './components/Achievements.jsx';
 import Clients from './components/Clients.jsx';
+import Blog from './components/Blog.jsx';
+import BlogIndex from './components/BlogIndex.jsx';
+import BlogPost from './components/BlogPost.jsx';
 import DetailPage from './components/DetailPage.jsx';
 import Footer from './components/Footer.jsx';
 import Atmosphere from './components/Atmosphere.jsx';
 import { parseHash } from './components/FeatureIcon.jsx';
 import { products, whatWeDo } from './data/products.js';
+import { getBlogPost } from './data/blog.js';
 import { initScrollAnimations } from './animations/scrollAnimations.js';
 import { initParallax } from './animations/parallax.js';
 
@@ -62,13 +66,16 @@ export default function App() {
 
     const product = route.type === 'product' ? products.find((p) => p.id === route.slug) : null;
     const service = route.type === 'do' ? whatWeDo.find((p) => p.id === route.slug) : null;
+    const article = route.type === 'blog' ? getBlogPost(route.slug) : null;
+    const showBlogList = route.type === 'blog-list';
+    const isHome = route.type === 'home';
 
     return (
         <div ref={rootRef} className="vrx-page">
             <Atmosphere />
-            <Navigation home={route.type === 'home'} />
+            <Navigation home={isHome} />
             <main>
-                {route.type === 'home' && (
+                {isHome && (
                     <>
                         <Hero />
                         <ProductShowcase />
@@ -77,16 +84,19 @@ export default function App() {
                         <MissionVision />
                         <Achievements />
                         <Clients />
+                        <Blog />
                     </>
                 )}
                 {product && <DetailPage kind="product" item={product} siblings={products} />}
                 {service && <DetailPage kind="do" item={service} siblings={whatWeDo} />}
-                {route.type !== 'home' && !product && !service && (
+                {showBlogList && <BlogIndex />}
+                {article && <BlogPost post={article} />}
+                {!isHome && !product && !service && !showBlogList && !article && (
                     <section className="detail-page">
                         <div className="detail-shell detail-shell--empty">
                             <span className="section-kicker">404</span>
                             <h1>Page not found</h1>
-                            <p className="detail-lead">That link does not match a product or service.</p>
+                            <p className="detail-lead">That link does not match a product, service, or article.</p>
                             <a className="cta cta--primary" href="#/">
                                 Return to home
                             </a>
